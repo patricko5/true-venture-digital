@@ -37,7 +37,7 @@ export async function POST(req) {
           console.log(`Sending confirmation email to ${customerEmail}...`);
 
           await resend.emails.send({
-            from: 'onboarding@resend.dev',
+            from: 'hello@trueventuredigital.com',
             to: customerEmail,
             subject: 'Your Purchase Confirmation - True Venture Digital',
             react: OrderConfirmationEmail({
