@@ -35,9 +35,9 @@ export async function POST(req) {
       if (customerEmail) {
         try {
           console.log(`Sending confirmation email to ${customerEmail}...`);
-          
+
           await resend.emails.send({
-            from: 'True Venture Digital <hello@trueventuredigital.com>',
+            from: 'onboarding@resend.dev',
             to: customerEmail,
             subject: 'Your Purchase Confirmation - True Venture Digital',
             react: OrderConfirmationEmail({
@@ -47,7 +47,7 @@ export async function POST(req) {
               amountTotal,
             }),
           });
-          
+
           console.log(`Email sent successfully to ${customerEmail}`);
         } catch (emailError) {
           console.error("Failed to send email:", emailError);
