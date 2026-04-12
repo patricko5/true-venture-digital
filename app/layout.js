@@ -1,5 +1,6 @@
 import { Archivo, Space_Grotesk } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 
 const archivo = Archivo({
@@ -26,6 +27,7 @@ export default function RootLayout({ children }) {
       <body className="min-h-full flex flex-col bg-black text-white font-body selection:bg-brand selection:text-white">
         {children}
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
