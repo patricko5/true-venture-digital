@@ -1,0 +1,279 @@
+<!DOCTYPE html><html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-fixed": "#e4e2e1",
+                    "on-secondary-fixed": "#1b1c1c",
+                    "surface-container-highest": "#353535",
+                    "on-primary-fixed": "#3a0b00",
+                    "surface": "#131313",
+                    "surface-dim": "#131313",
+                    "on-primary": "#5e1700",
+                    "secondary-fixed": "#e4e2e1",
+                    "primary-container": "#ff571a",
+                    "secondary-container": "#474746",
+                    "primary-fixed": "#ffdbd0",
+                    "secondary-fixed-dim": "#c8c6c5",
+                    "on-primary-container": "#521300",
+                    "surface-variant": "#353535",
+                    "surface-bright": "#393939",
+                    "on-surface-variant": "#e6beb2",
+                    "background": "#131313",
+                    "on-secondary-fixed-variant": "#474746",
+                    "tertiary": "#c8c6c6",
+                    "on-background": "#e2e2e2",
+                    "on-tertiary-fixed-variant": "#474747",
+                    "on-error-container": "#ffdad6",
+                    "inverse-on-surface": "#303030",
+                    "on-tertiary-fixed": "#1b1c1c",
+                    "error-container": "#93000a",
+                    "secondary": "#c8c6c5",
+                    "tertiary-container": "#919090",
+                    "on-tertiary": "#303030",
+                    "on-secondary": "#303030",
+                    "surface-container-low": "#1b1b1b",
+                    "on-secondary-container": "#b7b5b4",
+                    "surface-container-high": "#2a2a2a",
+                    "primary": "#ffb59e",
+                    "surface-tint": "#ffb59e",
+                    "surface-container-lowest": "#0e0e0e",
+                    "inverse-surface": "#e2e2e2",
+                    "tertiary-fixed-dim": "#c8c6c6",
+                    "inverse-primary": "#ae3200",
+                    "outline-variant": "#5c4037",
+                    "surface-container": "#1f1f1f",
+                    "on-primary-fixed-variant": "#852400",
+                    "outline": "#ad897e",
+                    "on-surface": "#e2e2e2",
+                    "error": "#ffb4ab",
+                    "primary-fixed-dim": "#ffb59e",
+                    "on-error": "#690005",
+                    "on-tertiary-container": "#292a2a"
+            },
+            "borderRadius": {
+                    "none": "0px",
+                    "DEFAULT": "0px",
+                    "lg": "0px",
+                    "xl": "0px",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Inter"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .grid-pattern {
+            background-image: radial-gradient(circle, #5c4037 1px, transparent 1px);
+            background-size: 24px 24px;
+            opacity: 0.1;
+        }
+        body {
+            background-color: #131313;
+            color: #e2e2e2;
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="antialiased overflow-x-hidden">
+<!-- Top Navigation -->
+<nav class="fixed top-0 w-full z-50 bg-[#000000]/80 backdrop-blur-xl border-b border-white/10"><div class="flex justify-between items-center h-20 px-6 max-w-full w-full">
+<div class="flex items-center gap-3">
+<div class="text-primary-container text-4xl font-black leading-none" style="">V</div>
+<div class="flex flex-col justify-center leading-none">
+<span class="text-white font-black text-sm uppercase tracking-tighter" style="">True Venture</span>
+<span class="text-primary-container font-bold text-[10px] uppercase tracking-[0.2em]" style="">Digital</span>
+</div>
+</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-['Inter'] font-semibold tracking-tight text-white hover:text-[#FF4D00] transition-colors" href="#" style=""><br></a>
+<a class="font-['Inter'] font-semibold tracking-tight text-white hover:text-[#FF4D00] transition-colors" href="#" style="">How it Works<br></a>
+<a class="font-['Inter'] font-semibold tracking-tight text-white hover:text-[#FF4D00] transition-colors" href="#" style="">About</a>
+<a class="font-['Inter'] font-semibold tracking-tight text-white hover:text-[#FF4D00] transition-colors" href="#" style="">FAQ</a>
+<button class="bg-primary-container text-on-primary-fixed px-5 py-2 font-bold uppercase tracking-tight scale-95 duration-200 hover:scale-100" style=""><span style="font-family: Inter; letter-spacing: -0.4px;">Book a Free Audit</span></button>
+</div>
+<div class="md:hidden">
+<span class="material-symbols-outlined text-white" style="">menu</span>
+</div>
+</div></nav>
+<main class="pt-32 pb-24">
+<!-- Hero Header -->
+<section class="px-8 mb-24 relative">
+<div class="grid-pattern absolute inset-0 -z-10"></div>
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row md:items-end justify-between gap-8">
+<div class="max-w-3xl">
+<div class="flex items-center gap-3 mb-6">
+<div class="w-2 h-2 bg-[#FF4D00] animate-pulse"></div>
+<span class="text-[0.75rem] font-medium tracking-[0.2em] text-[#FF4D00] uppercase" style="">Technical Workflow</span>
+</div>
+<h1 class="text-5xl md:text-7xl font-extrabold tracking-tighter text-white uppercase mb-8 leading-none" style="">
+                        Our Blueprint <br>for Your <span class="text-[#FF4D00]" style="">Expansion</span>
+</h1>
+</div>
+<div class="pb-2 border-l border-[#5c4037]/40 pl-6 hidden md:block">
+<p class="text-sm font-medium tracking-widest text-white/40 uppercase mb-2" style="">Revision 2.4.0</p>
+<p class="text-xs text-white/30 uppercase tracking-tighter" style="">Automated Revenue Protocol</p>
+</div>
+</div>
+</section>
+<!-- The 3-Step Process Grid -->
+<section class="px-8 max-w-7xl mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-3 border border-[#5c4037]/20">
+<!-- Step 01 -->
+<div class="p-12 border-b md:border-b-0 md:border-r border-[#5c4037]/20 bg-surface-container-lowest hover:bg-surface-container transition-colors duration-300 group">
+<div class="flex justify-between items-start mb-16">
+<span class="text-6xl font-black text-white/5 group-hover:text-[#FF4D00]/10 transition-colors duration-500" style="">01</span>
+<span class="material-symbols-outlined text-[#FF4D00] text-4xl" data-icon="troubleshoot" style="font-variation-settings: &quot;FILL&quot; 0;">troubleshoot</span>
+</div>
+<h3 class="text-2xl font-bold tracking-tight text-white uppercase mb-6" style="">Free audit</h3>
+<p class="text-white/60 leading-relaxed mb-10 text-sm" style="">
+                        We strip down your current digital infrastructure. Through a rigorous technical diagnostic, we identify leakages in your conversion funnel and map out untapped local market opportunities in Calgary.
+                    </p>
+<div class="pt-8 border-t border-[#5c4037]/20">
+<ul class="space-y-4">
+<li class="flex items-center gap-3 text-[10px] tracking-widest uppercase text-white/40" style="">
+<span class="w-1.5 h-1.5 bg-[#FF4D00]"></span> Conversion Analysis
+                            </li>
+<li class="flex items-center gap-3 text-[10px] tracking-widest uppercase text-white/40" style="">
+<span class="w-1.5 h-1.5 bg-[#FF4D00]"></span> Market Saturation Map
+                            </li>
+</ul>
+</div>
+</div>
+<!-- Step 02 -->
+<div class="p-12 border-b md:border-b-0 md:border-r border-[#5c4037]/20 bg-surface-container-lowest hover:bg-surface-container transition-colors duration-300 group">
+<div class="flex justify-between items-start mb-16">
+<span class="text-6xl font-black text-white/5 group-hover:text-[#FF4D00]/10 transition-colors duration-500" style="">02</span>
+<span class="material-symbols-outlined text-[#FF4D00] text-4xl" data-icon="construction" style="font-variation-settings: &quot;FILL&quot; 0;">construction</span>
+</div>
+<h3 class="text-2xl font-bold tracking-tight text-white uppercase mb-6" style="">7-day build</h3>
+<p class="text-white/60 leading-relaxed mb-10 text-sm" style="">
+                        Velocity is our priority. In exactly 168 hours, we deploy a precision-engineered landing system and advertising stack designed to capture high-intent leads while you sleep.
+                    </p>
+<div class="pt-8 border-t border-[#5c4037]/20">
+<ul class="space-y-4">
+<li class="flex items-center gap-3 text-[10px] tracking-widest uppercase text-white/40" style="">
+<span class="w-1.5 h-1.5 bg-[#FF4D00]"></span> Rapid Deployment
+                            </li>
+<li class="flex items-center gap-3 text-[10px] tracking-widest uppercase text-white/40" style="">
+<span class="w-1.5 h-1.5 bg-[#FF4D00]"></span> High-Intent Funnels
+                            </li>
+</ul>
+</div>
+</div>
+<!-- Step 03 -->
+<div class="p-12 bg-surface-container-lowest hover:bg-surface-container transition-colors duration-300 group">
+<div class="flex justify-between items-start mb-16">
+<span class="text-6xl font-black text-white/5 group-hover:text-[#FF4D00]/10 transition-colors duration-500" style="">03</span>
+<span class="material-symbols-outlined text-[#FF4D00] text-4xl" data-icon="phone_forwarded" style="font-variation-settings: &quot;FILL&quot; 0;">phone_forwarded</span>
+</div>
+<h3 class="text-2xl font-bold tracking-tight text-white uppercase mb-6" style="">Getting calls</h3>
+<p class="text-white/60 leading-relaxed mb-10 text-sm" style="">
+                        System output: Direct communication with qualified customers. We automate the hand-off so your only responsibility is picking up the phone and closing the deal.
+                    </p>
+<div class="pt-8 border-t border-[#5c4037]/20">
+<ul class="space-y-4">
+<li class="flex items-center gap-3 text-[10px] tracking-widest uppercase text-white/40" style="">
+<span class="w-1.5 h-1.5 bg-[#FF4D00]"></span> Real-time lead alerts
+                            </li>
+<li class="flex items-center gap-3 text-[10px] tracking-widest uppercase text-white/40" style="">
+<span class="w-1.5 h-1.5 bg-[#FF4D00]"></span> Revenue Tracking
+                            </li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- Technical Details Section -->
+<section class="mt-24 px-8 max-w-7xl mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-px bg-[#5c4037]/20 border border-[#5c4037]/20">
+<div class="lg:col-span-7 bg-surface p-12">
+<h2 class="text-3xl font-black tracking-tighter uppercase text-white mb-6" style="">System Specifications</h2>
+<div class="space-y-6">
+<div class="p-6 bg-surface-container-lowest border-l-4 border-[#FF4D00]">
+<p class="text-[10px] uppercase tracking-widest text-[#FF4D00] font-bold mb-2" style="">Protocol: Data Driven</p>
+<p class="text-sm text-white/70 italic" style="">"Our methodology rejects aesthetic assumptions in favor of conversion metrics. If a pixel doesn't contribute to your ROI, we delete it."</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="p-4 bg-surface-container-low border border-[#5c4037]/10">
+<span class="block text-xl font-bold text-white mb-1" style="">99.9%</span>
+<span class="text-[10px] uppercase tracking-widest text-white/40" style="">Uptime Reliability</span>
+</div>
+<div class="p-4 bg-surface-container-low border border-[#5c4037]/10">
+<span class="block text-xl font-bold text-white mb-1" style="">&lt; 1.2s</span>
+<span class="text-[10px] uppercase tracking-widest text-white/40" style="">Load Optimization</span>
+</div>
+</div>
+</div>
+</div>
+<div class="lg:col-span-5 bg-surface-container-lowest p-0 relative overflow-hidden h-80 lg:h-auto">
+<img alt="Industrial hardware circuitry" class="w-full h-full object-cover grayscale brightness-50 contrast-125 opacity-40" data-alt="Close-up of high-tech computer motherboard with orange glowing components and industrial aesthetic sharp metallic lines" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDq_r8yz3tse2b1wWsmeH1UlwXp94TdrXfZqH_KZ-3XknlUo0_6J5lCJ8qQ07kU1EduUGtGb_IwNFdGHv-m6bqbW8GlEbNNe3o73iCWg77KE3jD52ahLXTbO29E4p-jkDnYdsAFd75P5LbmDoqFNPCddQ4LG3Qk3-C9Pu_p7I30PPTBB4y2iH0tzatmnfoVIpeQplr-yzjlK8r0ciBoHdz2fwf5UODjI9rWjQyTuZvLUfNj7Kp_TZa1OaBOasMMk7SkgqMUly_znVU" style="">
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="border-2 border-[#FF4D00]/20 p-8 text-center backdrop-blur-sm">
+<span class="material-symbols-outlined text-[#FF4D00] text-5xl mb-4" data-icon="settings_suggest" style="font-variation-settings: &quot;FILL&quot; 1;">settings_suggest</span>
+<p class="text-xs font-black tracking-[0.3em] uppercase text-white" style="">Engineered Performance</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA Section -->
+<section class="mt-24 px-8 max-w-7xl mx-auto text-center">
+<div class="py-24 border-y border-[#5c4037]/20 bg-surface-container-lowest relative overflow-hidden">
+<div class="grid-pattern absolute inset-0 opacity-5"></div>
+<h2 class="text-4xl md:text-5xl font-black tracking-tighter text-white uppercase mb-8 relative z-10" style="">
+                    Ready to Initiate <span class="text-[#FF4D00]" style="">The Build</span>?
+                </h2>
+<p class="max-w-xl mx-auto text-white/50 text-sm tracking-wide mb-12 relative z-10" style="">
+                    Your competitors are comfortable. This is the moment to disrupt. Launch your 7-day build protocol today.
+                </p>
+<div class="flex flex-col md:flex-row items-center justify-center gap-6 relative z-10">
+<button class="bg-[#ff571a] text-[#3a0b00] px-12 py-4 font-bold tracking-tight uppercase text-lg hover:brightness-110 transition-all" style="">
+                        Schedule Free Audit
+                    </button>
+<button class="border border-[#FF4D00]/40 text-[#FF4D00] px-12 py-4 font-bold tracking-tight uppercase text-lg hover:bg-[#FF4D00]/10 transition-all" style="">
+                        View Case Studies
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#0e0e0e] border-t border-[#5c4037]/20 px-12 py-16 w-full grid grid-cols-1 md:grid-cols-3 gap-8">
+<div>
+<div class="text-lg font-black text-white uppercase mb-6" style="">True Venture Digital</div>
+<p class="font-['Inter'] text-sm tracking-widest uppercase text-white/50 leading-relaxed" style="">
+                Industrial-grade digital solutions for the bold Calgary enterprise.
+            </p>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-['Inter'] text-sm tracking-widest uppercase text-[#FF4D00] font-bold mb-2" style="">Navigation</h4>
+<a class="font-['Inter'] text-sm tracking-widest uppercase text-white/50 hover:text-white transition-colors" href="#" style="">How it Works</a>
+<a class="font-['Inter'] text-sm tracking-widest uppercase text-white/50 hover:text-white transition-colors" href="#" style="">FAQ</a>
+<a class="font-['Inter'] text-sm tracking-widest uppercase text-white/50 hover:text-white transition-colors" href="#" style="">About</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-['Inter'] text-sm tracking-widest uppercase text-[#FF4D00] font-bold mb-2" style="">Contact</h4>
+<span class="font-['Inter'] text-sm tracking-widest uppercase text-white/50" style="">Calgary Office: 123 Industrial Way, Calgary, AB</span>
+<div class="mt-8 pt-8 border-t border-[#5c4037]/10">
+<span class="font-['Inter'] text-[10px] tracking-widest uppercase text-white/30" style="">© 2024 True Venture Digital. All rights reserved.</span>
+</div>
+</div>
+</footer>
+</body></html>

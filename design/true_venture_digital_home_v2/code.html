@@ -1,0 +1,396 @@
+<!DOCTYPE html><html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary": "#c8c6c6",
+                        "on-error": "#690005",
+                        "surface-variant": "#353535",
+                        "outline": "#ad897e",
+                        "on-primary": "#5e1700",
+                        "on-secondary-container": "#b7b5b4",
+                        "surface-bright": "#393939",
+                        "on-primary-fixed-variant": "#852400",
+                        "surface-container-lowest": "#0e0e0e",
+                        "surface": "#131313",
+                        "on-surface-variant": "#e6beb2",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-high": "#2a2a2a",
+                        "secondary": "#c8c6c5",
+                        "primary-container": "#ff571a",
+                        "inverse-on-surface": "#303030",
+                        "primary-fixed": "#ffdbd0",
+                        "on-secondary": "#303030",
+                        "inverse-surface": "#e2e2e2",
+                        "on-tertiary": "#303030",
+                        "primary-fixed-dim": "#ffb59e",
+                        "on-primary-container": "#521300",
+                        "surface-tint": "#ffb59e",
+                        "surface-container-highest": "#353535",
+                        "inverse-primary": "#ae3200",
+                        "on-tertiary-container": "#292a2a",
+                        "on-tertiary-fixed-variant": "#474747",
+                        "primary": "#ffb59e",
+                        "error-container": "#93000a",
+                        "surface-dim": "#131313",
+                        "surface-container-low": "#1b1b1b",
+                        "on-surface": "#e2e2e2",
+                        "tertiary-container": "#919090",
+                        "secondary-fixed": "#e4e2e1",
+                        "outline-variant": "#5c4037",
+                        "on-primary-fixed": "#3a0b00",
+                        "tertiary-fixed-dim": "#c8c6c6",
+                        "secondary-container": "#474746",
+                        "on-tertiary-fixed": "#1b1c1c",
+                        "surface-container": "#1f1f1f",
+                        "background": "#000000",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "on-secondary-fixed": "#1b1c1c",
+                        "error": "#ffb4ab",
+                        "on-background": "#e2e2e2",
+                        "tertiary-fixed": "#e4e2e1",
+                        "on-secondary-fixed-variant": "#474746"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "0px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .technical-grid {
+            background-image: radial-gradient(#353535 0.5px, transparent 0.5px);
+            background-size: 24px 24px;
+        }
+    </style>
+</head>
+<body class="bg-black text-on-background font-body selection:bg-primary-container selection:text-on-primary-fixed">
+<!-- TopNavBar - Changed to absolute positioning over hero -->
+<nav class="absolute top-0 w-full z-50 bg-transparent border-b border-white/10">
+<div class="flex justify-between items-center h-20 px-6 max-w-full">
+<div class="flex items-center gap-3">
+<div class="text-primary-container text-4xl font-black leading-none" style="">V</div>
+<div class="flex flex-col justify-center leading-none">
+<span class="text-white font-black text-sm uppercase tracking-tighter" style="">True Venture</span>
+<span class="text-primary-container font-bold text-[10px] uppercase tracking-[0.2em]" style="">Digital</span>
+</div>
+</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-['Inter'] font-semibold tracking-tight text-white hover:text-orange-500 transition-colors" href="#" style="">Process</a>
+<a class="font-['Inter'] font-semibold tracking-tight text-white hover:text-orange-500 transition-colors" href="#" style="">Pricing</a>
+<a class="font-['Inter'] font-semibold tracking-tight text-white hover:text-orange-500 transition-colors" href="#" style="">About</a>
+<a class="font-['Inter'] font-semibold tracking-tight text-white hover:text-orange-500 transition-colors" href="#" style="">FAQ</a>
+<button class="bg-primary-container text-on-primary-fixed px-5 py-2 font-bold uppercase tracking-tight scale-95 duration-200 hover:scale-100" style=""><span style="letter-spacing: -0.4px;">Book a Free Audit</span></button>
+</div>
+<div class="md:hidden">
+<span class="material-symbols-outlined text-white" style="">menu</span>
+</div>
+</div>
+</nav>
+<main>
+<!-- Hero Section - Background changed to B&W Calgary skyline -->
+<section class="relative min-h-[921px] flex flex-col justify-center px-6 md:px-12 border-b border-outline-variant/20" style="background-image: url(&quot;https://lh3.googleusercontent.com/aida/ADBb0ujPraxwObPmVQJ0NAjDWk00-1uFV6XTCZnOTByGbh2suwaSbdpmb5bZsXtprsvrJGvyd5Vs3eJL4dBzntqn3K3_ttZNcpTgpxLlSFEcwkpeMggZsqcOWel4-OVYl4XY8bc5vYAHzn5cajvbgaxVfcnjTQGThc0Ds4hcLlExqlnErgZb-Q3-56sO9L7Q_C5IU2pc0u_wLXroLEchmfb3jiE9nU8oKl3TzWseCIEqtI8nAgWNeswdhm-3Lu1tvyFr5KaAlqj3EPPpcg&quot;); background-size: cover; background-position: center center; position: relative;">
+<div class="absolute inset-0 bg-black/70 z-0 backdrop-grayscale"></div>
+<div class="absolute inset-0 technical-grid opacity-30 z-10"></div>
+<div class="max-w-5xl relative z-20 pt-20">
+<div class="flex items-center gap-3 mb-6">
+<span class="w-2 h-2 bg-primary-container animate-pulse"></span>
+<span class="text-xs uppercase tracking-[0.2em] font-bold text-primary-container" style="">Live Operations: Calgary, AB</span>
+</div>
+<h1 class="text-5xl md:text-8xl font-black tracking-tighter uppercase leading-[0.9] mb-8" style="">
+                    GET FOUND ON <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-container to-orange-400" style="">GOOGLE.</span><br>
+                    GET MORE CALLS.
+                </h1>
+<p class="text-xl md:text-2xl text-on-surface-variant max-w-2xl font-medium leading-relaxed mb-10" style="">
+                    High-performance professional websites for Calgary's local businesses. Starting at <span class="text-white border-b-2 border-primary-container" style="">$1,000.</span>
+</p>
+<div class="flex flex-col md:flex-row gap-4">
+<button class="bg-primary-container text-on-primary-fixed text-lg px-10 py-5 font-black uppercase tracking-tight hover:brightness-110 transition-all" style="">
+                        Get My Free Audit
+                    </button>
+<div class="flex items-center gap-4 px-6 py-4 border border-outline-variant/30 bg-surface-container-lowest">
+<div class="flex -space-x-2">
+<div class="w-8 h-8 bg-surface-container-highest flex items-center justify-center border border-black"><span class="material-symbols-outlined text-xs" style="">person</span></div>
+<div class="w-8 h-8 bg-surface-container-highest flex items-center justify-center border border-black"><span class="material-symbols-outlined text-xs" style="">person</span></div>
+<div class="w-8 h-8 bg-surface-container-highest flex items-center justify-center border border-black"><span class="material-symbols-outlined text-xs" style="">person</span></div>
+</div>
+<span class="text-[10px] uppercase tracking-widest font-bold opacity-60" style="">Joined by 12+ local shops</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Problem Section -->
+<section class="py-24 px-6 md:px-12 bg-surface">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-0 border border-outline-variant/20">
+<div class="p-12 border-b md:border-b-0 md:border-r border-outline-variant/20 bg-surface-container-lowest group hover:bg-surface-container transition-colors">
+<div class="mb-8 text-primary-container">
+<span class="material-symbols-outlined text-4xl" style="">visibility_off</span>
+</div>
+<h3 class="text-2xl font-bold uppercase tracking-tight mb-4" style="">Invisible on Google</h3>
+<p class="text-on-surface-variant leading-relaxed" style="">Your competitors are taking the leads because they show up first. We fix your technical SEO from the ground up.</p>
+</div>
+<div class="p-12 border-b md:border-b-0 md:border-r border-outline-variant/20 bg-surface-container-lowest group hover:bg-surface-container transition-colors">
+<div class="mb-8 text-primary-container">
+<span class="material-symbols-outlined text-4xl" style="">history</span>
+</div>
+<h3 class="text-2xl font-bold uppercase tracking-tight mb-4" style="">Outdated Design</h3>
+<p class="text-on-surface-variant leading-relaxed" style="">An old website kills trust. We build modern, industrial-grade interfaces that turn visitors into paying customers.</p>
+</div>
+<div class="p-12 bg-surface-container-lowest group hover:bg-surface-container transition-colors">
+<div class="mb-8 text-primary-container">
+<span class="material-symbols-outlined text-4xl" style="">leak_remove</span>
+</div>
+<h3 class="text-2xl font-bold uppercase tracking-tight mb-4" style="">Losing Leads</h3>
+<p class="text-on-surface-variant leading-relaxed" style="">If your site is slow or hard to navigate, people leave. Our sites are engineered for maximum conversion speed.</p>
+</div>
+</div>
+</section>
+<!-- Package Section -->
+<section class="py-24 px-6 md:px-12 bg-black overflow-hidden relative">
+<div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div>
+<span class="inline-block px-3 py-1 bg-primary-container/10 border border-primary-container text-primary-container text-[10px] font-black uppercase tracking-[0.2em] mb-6" style="">Standard Configuration</span>
+<h2 class="text-5xl md:text-7xl font-black uppercase tracking-tighter mb-8 leading-tight" style="">
+                        The $1,000 <br><span class="text-primary-container" style="">Starter Package</span>
+</h2>
+<ul class="space-y-6">
+<li class="flex items-start gap-4" style="">
+<span class="material-symbols-outlined text-primary-container" style="">check_circle</span>
+<div>
+<span class="block font-bold uppercase text-sm tracking-widest" style="">5-7 Page Custom Website</span>
+<span class="text-on-surface-variant text-sm" style="">Tailored to your specific trade or service business.</span>
+</div>
+</li>
+<li class="flex items-start gap-4" style="">
+<span class="material-symbols-outlined text-primary-container" style="">check_circle</span>
+<div>
+<span class="block font-bold uppercase text-sm tracking-widest" style="">Google Business Setup</span>
+<span class="text-on-surface-variant text-sm" style="">Full optimization to get you on the local map pack.</span>
+</div>
+</li>
+<li class="flex items-start gap-4" style="">
+<span class="material-symbols-outlined text-primary-container" style="">check_circle</span>
+<div>
+<span class="block font-bold uppercase text-sm tracking-widest" style="">Local SEO Foundation</span>
+<span class="text-on-surface-variant text-sm" style="">Keyword targeting for Calgary and surrounding areas.</span>
+</div>
+</li>
+<li class="flex items-start gap-4" style="">
+<span class="material-symbols-outlined text-primary-container" style="">check_circle</span>
+<div>
+<span class="block font-bold uppercase text-sm tracking-widest" style="">Lightning Fast Hosting</span>
+<span class="text-on-surface-variant text-sm" style="">99.9% uptime with enterprise-grade security.</span>
+</div>
+</li>
+</ul>
+</div>
+<div class="relative">
+<div class="bg-surface-container p-1 border border-outline-variant/20 shadow-2xl">
+<div class="bg-black p-8 border border-outline-variant/10">
+<div class="flex justify-between items-center mb-12">
+<div class="text-xs font-mono text-primary-container uppercase tracking-widest" style="">Spec-Sheet-001</div>
+<div class="w-12 h-[1px] bg-outline-variant/30"></div>
+</div>
+<img alt="Project Preview" class="w-full grayscale brightness-75 border border-outline-variant/20 mb-8" data-alt="minimalist modern dark mode website interface displayed on a high-end laptop screen with industrial design elements" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0MyQ9H2e092FD6tYNaNpGgZ9TuNkG0D7QRLN9fjzyfIlc7OlZ1i08BVvtl5IUfeXI-ejuUiiTrbdHDpCIU8zVYUPJVHGBaFISAk_qhOuVtwVfJA35PNPhGH2CbOpfISLXHjjWYW6CF-SbiNhqjAULCnfOqbwUY0V-zXjU797Gy_tbdkO1Io5oMOJgVoTGenmeWCgDuCslhW7ZvH0YMoC2ub_6Y3rtObF9urcmBfvsA3hTnLrXgaDTbKL796xJqwG82wNC9q-_d6w" style="">
+<div class="flex justify-between items-end">
+<div>
+<div class="text-[10px] text-on-surface-variant uppercase tracking-widest mb-1" style="">Fixed Cost Investment</div>
+<div class="text-4xl font-black tracking-tighter" style="">$1,000 <span class="text-sm font-normal opacity-50 uppercase" style="">CAD</span></div>
+</div>
+<button class="bg-white text-black px-6 py-3 font-bold uppercase text-xs tracking-widest hover:bg-primary-container hover:text-white transition-colors" style="">Reserve Slot</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- How It Works -->
+<section class="py-24 px-6 md:px-12 bg-surface-container-lowest">
+<div class="mb-16">
+<h2 class="text-4xl font-black uppercase tracking-tighter" style="">Execution <span class="text-primary-container" style="">Protocol</span></h2>
+<div class="h-1 w-24 bg-primary-container mt-4"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+<div class="relative">
+<div class="text-[8rem] font-black text-white/5 absolute -top-20 -left-4 pointer-events-none" style="">01</div>
+<div class="relative z-10">
+<h4 class="text-xl font-bold uppercase tracking-tight mb-4 text-primary-container" style="">Free Audit</h4>
+<p class="text-on-surface-variant" style="">We scan your current presence and tell you exactly why you aren't ranking and how much traffic you're missing.</p>
+</div>
+</div>
+<div class="relative">
+<div class="text-[8rem] font-black text-white/5 absolute -top-20 -left-4 pointer-events-none" style="">02</div>
+<div class="relative z-10">
+<h4 class="text-xl font-bold uppercase tracking-tight mb-4 text-primary-container" style="">7-Day Build</h4>
+<p class="text-on-surface-variant" style="">Once we have your assets, our rapid-development sprint gets your high-performance site live in just one week.</p>
+</div>
+</div>
+<div class="relative">
+<div class="text-[8rem] font-black text-white/5 absolute -top-20 -left-4 pointer-events-none" style="">03</div>
+<div class="relative z-10">
+<h4 class="text-xl font-bold uppercase tracking-tight mb-4 text-primary-container" style="">Getting Calls</h4>
+<p class="text-on-surface-variant" style="">Your phone starts ringing. We hand over the keys and show you how to manage your new leads effortlessly.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials -->
+<section class="py-24 px-6 md:px-12 bg-surface">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="p-10 border border-outline-variant/10 bg-black flex flex-col h-full">
+<div class="flex gap-1 mb-6">
+<span class="material-symbols-outlined text-primary-container text-sm" style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
+<span class="material-symbols-outlined text-primary-container text-sm" style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
+<span class="material-symbols-outlined text-primary-container text-sm" style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
+<span class="material-symbols-outlined text-primary-container text-sm" style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
+<span class="material-symbols-outlined text-primary-container text-sm" style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
+</div>
+<p class="text-lg italic leading-relaxed text-on-surface mb-8 flex-grow" style="">"My plumbing business was buried on page 4. Two weeks after working with True Venture, we're in the top 3 spots for 'Plumber Calgary'. Life changing."</p>
+<div>
+<div class="font-bold uppercase tracking-widest text-sm text-primary-container" style="">Mark Thompson</div>
+<div class="text-[10px] uppercase opacity-50" style="">Owner, Thompson &amp; Sons Plumbing</div>
+</div>
+</div>
+<div class="p-10 border border-outline-variant/10 bg-black flex flex-col h-full">
+<div class="flex gap-1 mb-6">
+<span class="material-symbols-outlined text-primary-container text-sm" style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
+<span class="material-symbols-outlined text-primary-container text-sm" style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
+<span class="material-symbols-outlined text-primary-container text-sm" style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
+<span class="material-symbols-outlined text-primary-container text-sm" style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
+<span class="material-symbols-outlined text-primary-container text-sm" style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
+</div>
+<p class="text-lg italic leading-relaxed text-on-surface mb-8 flex-grow" style="">"The website looks amazing. It feels like a high-end brand now, not just a neighborhood diner. We've seen a massive spike in table reservations."</p>
+<div>
+<div class="font-bold uppercase tracking-widest text-sm text-primary-container" style="">Sarah Chen</div>
+<div class="text-[10px] uppercase opacity-50" style="">General Manager, The Iron Oak</div>
+</div>
+</div>
+<div class="p-10 border border-outline-variant/10 bg-black flex flex-col h-full">
+<div class="flex gap-1 mb-6">
+<span class="material-symbols-outlined text-primary-container text-sm" style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
+<span class="material-symbols-outlined text-primary-container text-sm" style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
+<span class="material-symbols-outlined text-primary-container text-sm" style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
+<span class="material-symbols-outlined text-primary-container text-sm" style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
+<span class="material-symbols-outlined text-primary-container text-sm" style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
+</div>
+<p class="text-lg italic leading-relaxed text-on-surface mb-8 flex-grow" style="">"The technical audit was a wake-up call. These guys know their stuff. Our renovation leads doubled in the first month."</p>
+<div>
+<div class="font-bold uppercase tracking-widest text-sm text-primary-container" style="">David Miller</div>
+<div class="text-[10px] uppercase opacity-50" style="">Founder, Miller Contracting</div>
+</div>
+</div>
+</div>
+</section>
+<!-- About Section -->
+<section class="py-24 px-6 md:px-12 border-y border-outline-variant/10">
+<div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-16">
+<div class="w-full md:w-1/3 aspect-square bg-surface-container border border-outline-variant/20 overflow-hidden">
+<img alt="Founder" class="w-full h-full object-cover grayscale" data-alt="professional portrait of a man in dark casual clothing against a minimalist grey industrial background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAB-o4wwNWAdPCxR-6VEQ9Z4WM-cXUmZAUB_OBQdesB8e5wViKfIhQeESsXxDojobLsl0KmlAPslOmdL5JS82zCtfr8Kv33otGkwKfkV3ZKEdBu-8t9Jxl2UqXFijcNJ9XAnq_HBsf6KNvAKfh0uQAENt5hIchnaAivrJJXg_KlS4qyP0cCxecZUevAN0ZlDYw-dz_ZS-wjQ3KBnNsFqJD1TibC1mhN1l48FDSdFyffXjJQ-8fiBCGyCiwZH4YwKnsVTJ3uRz7qjxs" style="">
+</div>
+<div class="w-full md:w-2/3">
+<h2 class="text-3xl font-black uppercase tracking-tighter mb-6" style="">Built in Calgary. <br><span class="text-primary-container" style="">By Hand.</span></h2>
+<p class="text-xl text-on-surface-variant leading-relaxed mb-6" style="">
+                        I’m a solo founder based right here in YYC. I don't outsource my work to overseas agencies. Every pixel, every line of code, and every SEO strategy is executed by me to ensure your local business gets the results it deserves.
+                    </p>
+<div class="flex items-center gap-2">
+<div class="w-8 h-[1px] bg-primary-container"></div>
+<span class="text-xs font-mono uppercase tracking-[0.2em]" style="">Quality First Engineering</span>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQ Section -->
+<section class="py-24 px-6 md:px-12 bg-black">
+<div class="max-w-3xl mx-auto">
+<h2 class="text-4xl font-black uppercase tracking-tighter mb-12 text-center" style="">Frequently <span class="text-primary-container" style="">Asked</span></h2>
+<div class="space-y-4">
+<div class="border border-outline-variant/20 p-6 bg-surface-container-lowest">
+<div class="flex justify-between items-center cursor-pointer">
+<h4 class="font-bold uppercase text-sm tracking-widest" style="">Why only $1,000?</h4>
+<span class="material-symbols-outlined text-primary-container" style="">add</span>
+</div>
+</div>
+<div class="border border-outline-variant/20 p-6 bg-surface-container-lowest">
+<div class="flex justify-between items-center cursor-pointer">
+<h4 class="font-bold uppercase text-sm tracking-widest" style="">How long does it take?</h4>
+<span class="material-symbols-outlined text-primary-container" style="">add</span>
+</div>
+</div>
+<div class="border border-outline-variant/20 p-6 bg-surface-container-lowest">
+<div class="flex justify-between items-center cursor-pointer">
+<h4 class="font-bold uppercase text-sm tracking-widest" style="">Do I own the website?</h4>
+<span class="material-symbols-outlined text-primary-container" style="">add</span>
+</div>
+</div>
+<div class="border border-outline-variant/20 p-6 bg-surface-container-lowest">
+<div class="flex justify-between items-center cursor-pointer">
+<h4 class="font-bold uppercase text-sm tracking-widest" style="">What about maintenance?</h4>
+<span class="material-symbols-outlined text-primary-container" style="">add</span>
+</div>
+</div>
+<div class="border border-outline-variant/20 p-6 bg-surface-container-lowest">
+<div class="flex justify-between items-center cursor-pointer">
+<h4 class="font-bold uppercase text-sm tracking-widest" style="">Do you handle SEO?</h4>
+<span class="material-symbols-outlined text-primary-container" style="">add</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="py-32 px-6 md:px-12 technical-grid bg-primary-container relative">
+<div class="max-w-5xl mx-auto text-center">
+<h2 class="text-5xl md:text-7xl font-black uppercase tracking-tighter text-on-primary-fixed mb-8 leading-none" style="">READY TO OWN YOUR <br>LOCAL MARKET?</h2>
+<p class="text-xl text-on-primary-fixed font-medium mb-12 max-w-2xl mx-auto opacity-80" style="">Stop letting competitors take your leads. Get your custom performance site and local SEO foundation for just $1,000.</p>
+<button class="bg-black text-white text-lg px-12 py-6 font-black uppercase tracking-widest hover:scale-105 transition-transform" style="">
+                    Book a Free Audit
+                </button>
+</div>
+<!-- Decorative corner marks -->
+<div class="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-black/20"></div>
+<div class="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-black/20"></div>
+<div class="absolute bottom-0 left-0 w-8 h-8 border-b-2 border-l-2 border-black/20"></div>
+<div class="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-black/20"></div>
+</section>
+</main>
+<!-- Footer - Logo updated -->
+<footer class="bg-[#0e0e0e] w-full border-t border-white/5">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 px-8 py-12 w-full">
+<div>
+<div class="flex items-center gap-3 mb-4">
+<div class="text-primary-container text-3xl font-black leading-none" style="">V</div>
+<div class="flex flex-col justify-center leading-none">
+<span class="text-white font-black text-xs uppercase tracking-tighter" style="">True Venture</span>
+<span class="text-primary-container font-bold text-[8px] uppercase tracking-[0.2em]" style="">Digital</span>
+</div>
+</div>
+<div class="font-['Inter'] text-[10px] uppercase tracking-widest text-gray-500" style="">© 2024 TRUE VENTURE DIGITAL. BUILT FOR CALGARY.</div>
+</div>
+<div class="flex flex-wrap gap-x-8 gap-y-4 md:justify-end items-center">
+<a class="font-['Inter'] text-xs uppercase tracking-widest text-gray-500 hover:text-white transition-colors" href="#" style="">Privacy Policy</a>
+<a class="font-['Inter'] text-xs uppercase tracking-widest text-gray-500 hover:text-white transition-colors" href="#" style="">Terms of Service</a>
+<a class="font-['Inter'] text-xs uppercase tracking-widest text-gray-500 hover:text-white transition-colors" href="#" style="">Instagram</a>
+<a class="font-['Inter'] text-xs uppercase tracking-widest text-gray-500 hover:text-white transition-colors" href="#" style="">LinkedIn</a>
+</div>
+</div>
+</footer>
+</body></html>
