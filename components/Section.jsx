@@ -15,7 +15,7 @@ export default function Section({
     <section
       id={id}
       className={cn(
-        "relative min-h-screen w-full overflow-hidden flex flex-col items-center justify-center",
+        "relative min-h-screen w-full overflow-hidden flex flex-col items-center justify-center pt-0 pb-16 md:pt-4 md:pb-4 scroll-mt-[72px] md:scroll-mt-[96px]",
         ghostGrid && "ghost-grid",
         className
       )}

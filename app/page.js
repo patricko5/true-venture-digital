@@ -5,7 +5,8 @@ import Section from "@/components/Section";
 import Navbar from "@/components/Navbar";
 import Button from "@/components/Button";
 import { Search, MousePointerClick, TrendingUp, ArrowRight, ShieldCheck, Zap, Globe, MapPin } from "lucide-react";
-import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence, useMotionValue, useTransform, useSpring, useMotionTemplate } from "framer-motion";
 
 const fadeInUp = {
   initial: { opacity: 0, y: 30 },
@@ -21,7 +22,81 @@ const staggerContainer = {
   transition: { staggerChildren: 0.1 }
 };
 
+const ProblemCard = ({ card, index }) => {
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+
+  const rotateX = useSpring(useTransform(mouseY, [-0.5, 0.5], [7, -7]), { stiffness: 200, damping: 25 });
+  const rotateY = useSpring(useTransform(mouseX, [-0.5, 0.5], [-7, 7]), { stiffness: 200, damping: 25 });
+
+  function onMouseMove({ currentTarget, clientX, clientY }) {
+    const { left, top, width, height } = currentTarget.getBoundingClientRect();
+    mouseX.set((clientX - left) / width - 0.5);
+    mouseY.set((clientY - top) / height - 0.5);
+  }
+
+  const spotlightX = useSpring(useTransform(mouseX, [-0.5, 0.5], ["0%", "100%"]), { stiffness: 200 });
+  const spotlightY = useSpring(useTransform(mouseY, [-0.5, 0.5], ["0%", "100%"]), { stiffness: 200 });
+
+  return (
+    <motion.div
+      variants={{
+        initial: { opacity: 0, y: 30 },
+        whileInView: { opacity: 1, y: 0 }
+      }}
+      onMouseMove={onMouseMove}
+      onMouseLeave={() => { mouseX.set(0); mouseY.set(0); }}
+      style={{
+        rotateX,
+        rotateY,
+        transformStyle: "preserve-3d",
+      }}
+      className="group relative p-10 bg-surface-1/40 backdrop-blur-xl border border-white/10 hover:border-brand/40 transition-colors rounded-[2.5rem] text-left flex flex-col items-start overflow-hidden cursor-pointer h-full"
+    >
+      <motion.div
+        className="pointer-events-none absolute -inset-px rounded-[2.5rem] opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+        style={{
+          background: useMotionTemplate`
+            radial-gradient(
+              600px circle at ${spotlightX} ${spotlightY},
+              rgba(255, 107, 78, 0.15),
+              transparent 80%
+            )
+          `,
+        }}
+      />
+
+      <div style={{ transform: "translateZ(30px)" }} className="relative z-10 w-full h-full flex flex-col">
+        <div className="mb-6 p-4 bg-brand/10 w-fit rounded-2xl group-hover:scale-110 group-hover:bg-brand/20 transition-all duration-500">
+          {card.icon}
+        </div>
+        <h3 className="text-base font-bold tracking-tight mb-3 group-hover:text-brand transition-colors uppercase">
+          {card.title}
+        </h3>
+        <p className="text-white/40 text-sm font-body leading-relaxed flex-grow">
+          {card.desc}
+        </p>
+      </div>
+    </motion.div>
+  );
+};
+
 export default function Home() {
+  const rotatingWords = [
+    "GET CALLS",
+    "GET CLIENTS",
+    "GET FOUND",
+    "SHOW UP"
+  ];
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setIndex((prev) => (prev + 1) % rotatingWords.length);
+    }, 3500);
+    return () => clearInterval(timer);
+  }, [rotatingWords.length]);
+
   return (
     <main className="flex flex-col w-full">
       <Navbar />
@@ -38,15 +113,29 @@ export default function Home() {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="flex flex-col items-center text-center space-y-8 max-w-4xl mx-auto"
         >
-          <div className="flex items-center gap-2 bg-brand/10 border border-brand/20 px-4 py-1">
+          {/* <div className="flex items-center gap-2 bg-brand/10 border border-brand/20 px-4 py-1">
             <div className="w-2 h-2 bg-brand animate-pulse" />
             <span className="text-[10px] uppercase tracking-[.3em] font-bold text-brand">
-              Calgary's Local Search Specialists
+              CALGARY, AB
             </span>
-          </div>
+          </div> */}
 
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-black leading-tight">
-            We Build Websites That <span className="text-brand">Actually</span> <br />Show Up.
+          <h1 className="text-4xl md:text-7xl lg:text-8xl font-black leading-tight flex flex-col items-center px-4">
+            <span className="text-center">We Build Websites That <span className="text-brand">Actually</span></span>
+            <div className="h-[1.4em] relative w-full flex justify-center overflow-hidden">
+              <AnimatePresence mode="wait">
+                <motion.span
+                  key={rotatingWords[index]}
+                  initial={{ y: 40, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  exit={{ y: -40, opacity: 0 }}
+                  transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                  className="absolute text-brand whitespace-nowrap tracking-[0.05em] text-4xl md:text-7xl lg:text-8xl"
+                >
+                  {rotatingWords[index]}
+                </motion.span>
+              </AnimatePresence>
+            </div>
           </h1>
 
           <p className="text-white/60 text-lg md:text-xl font-body max-w-2xl mx-auto leading-relaxed">
@@ -71,7 +160,7 @@ export default function Home() {
           >
             <div className="flex flex-col items-center gap-2">
               <ShieldCheck size={20} />
-              <span className="text-[10px] uppercase tracking-widest font-bold">Mobile-First</span>
+              <span className="text-[10px] uppercase tracking-widest font-bold">CONVERSION-DRIVEN</span>
             </div>
             <div className="flex flex-col items-center gap-2">
               <Zap size={20} />
@@ -91,17 +180,17 @@ export default function Home() {
         bgImage="/images/peace_bridge.png"
         className="bg-surface-0 border-y border-white/5"
       >
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="flex flex-col items-center text-center space-y-16">
           <motion.div
             {...fadeInUp}
-            className="space-y-6"
+            className="space-y-6 max-w-3xl"
           >
             <span className="text-brand font-heading text-xs tracking-[0.4em] font-black uppercase">Why It Matters</span>
-            <h2 className="text-4xl md:text-6xl font-black leading-none">
+            <h2 className="text-4xl md:text-7xl font-black leading-none uppercase">
               Is Your Business <br />
               <span className="text-edge-outline">Invisible Online?</span>
             </h2>
-            <p className="text-white/60 font-body text-lg max-w-lg leading-relaxed">
+            <p className="text-white/60 font-body text-base md:text-lg max-w-xl mx-auto leading-relaxed">
               If your business doesn't appear on the first page of Google when a local customer
               searches for your services, you're handing revenue to your competitors.
             </p>
@@ -109,7 +198,7 @@ export default function Home() {
 
           <motion.div
             {...staggerContainer}
-            className="grid grid-cols-1 md:grid-cols-2 gap-6"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 w-full"
           >
             {[
               {
@@ -133,18 +222,7 @@ export default function Home() {
                 desc: "An outdated website makes your quality service look unprofessional."
               }
             ].map((card, i) => (
-              <motion.div
-                key={i}
-                variants={{
-                  initial: { opacity: 0, y: 20 },
-                  whileInView: { opacity: 1, y: 0 }
-                }}
-                className="p-8 bg-surface-1 border border-white/10 hover:border-brand/40 transition-all group"
-              >
-                <div className="mb-4 group-hover:scale-110 transition-transform">{card.icon}</div>
-                <h3 className="text-sm font-bold tracking-widest mb-2 group-hover:text-brand transition-colors">{card.title}</h3>
-                <p className="text-white/40 text-xs font-body leading-relaxed">{card.desc}</p>
-              </motion.div>
+              <ProblemCard key={i} card={card} index={i} />
             ))}
           </motion.div>
         </div>
@@ -178,7 +256,7 @@ export default function Home() {
             {[
               {
                 title: "Development",
-                items: ["5–7 Page Technical Site", "Mobile-First Design", "Fast Loading Speed", "Secure Hosting Setup"]
+                items: ["5–7 Page Technical Site", "Fast Loading Speed", "Secure Hosting Setup", "Responsive Optimization"]
               },
               {
                 title: "Local SEO",
@@ -186,7 +264,7 @@ export default function Home() {
               },
               {
                 title: "Assets",
-                items: ["10 Curated Professional Photos", "Contact Forms", "Click-to-Call Buttons", "Social Media Linking"]
+                items: ["Contact Forms", "Click-to-Call Buttons", "Custom Business Graphics", "Social Media Linking"]
               }
             ].map((box, i) => (
               <motion.div
@@ -308,7 +386,7 @@ export default function Home() {
             <h4 className="font-heading text-xs font-black tracking-[0.4em] uppercase text-brand">Calgary HQ</h4>
             <div className="flex items-center gap-4 text-white/50">
               <MapPin size={20} className="text-brand shrink-0" />
-              <span className="text-sm uppercase tracking-widest leading-relaxed">Bridgeland/Riverside,<br />Calgary, AB</span>
+              <span className="text-sm uppercase tracking-widest leading-relaxed">Calgary, AB</span>
             </div>
             <Button variant="industrial" size="lg" className="w-full text-xs" href="/free-audit">
               BOOK FREE AUDIT

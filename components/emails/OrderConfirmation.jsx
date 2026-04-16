@@ -66,7 +66,7 @@ export const OrderConfirmationEmail = ({
 
     <div style={{ textAlign: 'center', color: 'rgba(255,255,255,0.4)', fontSize: '12px' }}>
       <p>© 2026 True Venture Digital. Kinetic Architect. All rights reserved.</p>
-      <p>Bridgeland/Riverside, Calgary, AB</p>
+      <p>Calgary, AB</p>
     </div>
   </div>
 );

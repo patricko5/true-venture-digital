@@ -30,7 +30,7 @@ const projects = [
     rating: 5,
   },
   {
-    name: "Bridgeland Bistro",
+    name: "Mission Bistro",
     type: "Restaurant — Fine Dining",
     result: "3x increase in online reservations",
     color: "from-amber-900/30 to-surface-1",

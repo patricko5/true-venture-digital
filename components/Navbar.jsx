@@ -51,22 +51,19 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="fixed top-0 left-0 right-0 z-[60] flex justify-center p-6 md:p-8 pointer-events-none">
-        {/* Centered Floating Bar */}
-        <motion.div 
+      <nav className="fixed top-0 left-0 right-0 z-[60] flex justify-center p-0 pointer-events-none">
+        {/* Full-Width Desktop & Mobile Bar */}
+        <motion.div
           style={{ opacity, y }}
-          className="pointer-events-auto flex items-center glass-morphism w-full max-w-5xl px-10 py-5 border border-white/10 relative"
+          className="pointer-events-auto flex items-center bg-surface-0/90 backdrop-blur-md w-full px-6 py-4 md:px-12 md:py-6 border-b border-white/5 relative"
         >
           {/* Logo Container */}
           <Link href="/#hero" className="flex-1 flex items-center gap-4 group" onClick={closeMenu}>
-            <div className="w-12 h-12 bg-brand flex items-center justify-center font-heading font-black text-white text-2xl shrink-0 group-hover:scale-105 transition-transform">
-              V
-            </div>
-            <div className="hidden lg:flex flex-col leading-none">
-              <span className="font-heading text-[13px] tracking-[0.3em] font-bold uppercase text-white group-hover:text-brand transition-colors">
+            <div className="flex flex-col leading-none">
+              <span className="font-heading font-black text-white text-base md:text-lg tracking-tighter uppercase">
                 True Venture
               </span>
-              <span className="font-heading text-[13px] tracking-[0.3em] font-bold uppercase text-brand group-hover:text-white transition-colors">
+              <span className="font-heading font-black text-brand text-base md:text-lg tracking-tighter uppercase">
                 Digital
               </span>
             </div>
@@ -76,15 +73,15 @@ export default function Navbar() {
           <div className="flex-none hidden md:flex items-center justify-center gap-10 px-4">
             {navItems.map((item) => {
               const isActive = pathname === "/" && activeSegment === item.id;
-              
+
               return (
-                <Link 
+                <Link
                   key={item.title}
                   href={item.href}
                   onClick={() => setActiveSegment(item.id)}
                   className={cn(
-                    "relative font-body text-[13px] tracking-[0.25em] uppercase transition-colors whitespace-nowrap py-1",
-                    isActive ? "text-white" : "text-white/40 hover:text-brand"
+                    "relative font-heading font-bold text-[13px] tracking-[0.2em] uppercase transition-colors whitespace-nowrap py-1",
+                    isActive ? "text-white" : "text-white/60 hover:text-brand"
                   )}
                 >
                   {item.title}
@@ -97,7 +94,7 @@ export default function Navbar() {
                       transition={{ type: "spring", stiffness: 400, damping: 30 }}
                     />
                   )}
-                  
+
                   {!isActive && (
                     <motion.div
                       initial={{ scaleX: 0 }}
@@ -113,18 +110,22 @@ export default function Navbar() {
 
           {/* Mobile Menu Toggle */}
           <div className="md:hidden flex-none">
-            <button 
+            <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className={cn(
-                "p-2 rounded-none transition-all duration-300",
-                isMenuOpen ? "bg-white text-brand" : "bg-brand text-white"
-              )}
+              className="p-2 text-white hover:text-brand transition-colors"
             >
-              {isMenuOpen ? <ArrowRight size={20} className="rotate-90" /> : <div className="space-y-1">
-                <div className="w-5 h-0.5 bg-white"></div>
-                <div className="w-5 h-0.5 bg-white"></div>
-                <div className="w-3 h-0.5 bg-white"></div>
-              </div>}
+              {isMenuOpen ? (
+                <div className="relative w-6 h-6 flex items-center justify-center">
+                  <div className="absolute w-6 h-0.5 bg-white rotate-45"></div>
+                  <div className="absolute w-6 h-0.5 bg-white -rotate-45"></div>
+                </div>
+              ) : (
+                <div className="space-y-1.5">
+                  <div className="w-6 h-0.5 bg-white"></div>
+                  <div className="w-6 h-0.5 bg-white"></div>
+                  <div className="w-6 h-0.5 bg-white"></div>
+                </div>
+              )}
             </button>
           </div>
 
@@ -132,19 +133,19 @@ export default function Navbar() {
           <div className="flex-1 hidden md:flex items-center justify-end gap-6 text-[11px] uppercase tracking-widest">
             <div className="hidden xl:flex items-center gap-2 text-white/30 whitespace-nowrap">
               <MapPin size={12} className="text-brand" />
-              <span>Calgary, AB</span>
+              <span>CALGARY, AB</span>
             </div>
-            
-            <Button 
-              variant="primary" 
-              size="md" 
+
+            <Button
+              variant="primary"
+              size="md"
               className={cn(
                 "hidden sm:flex group h-11 px-6 text-[11px] transition-all duration-300",
                 pathname === "/free-audit" ? "ring-2 ring-brand ring-offset-4 ring-offset-black" : ""
-              )} 
+              )}
               href="/free-audit"
             >
-              FREE AUDIT 
+              FREE AUDIT
               <motion.div
                 animate={{ x: [0, 5, 0] }}
                 transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
@@ -192,10 +193,10 @@ export default function Navbar() {
                 transition={{ delay: 0.5 }}
                 className="pt-8 w-full"
               >
-                <Button 
-                  href="/free-audit" 
-                  variant="white" 
-                  size="xl" 
+                <Button
+                  href="/free-audit"
+                  variant="white"
+                  size="xl"
                   className="w-full text-brand justify-center"
                   onClick={closeMenu}
                 >
@@ -203,8 +204,8 @@ export default function Navbar() {
                 </Button>
               </motion.div>
             </div>
-            
-            <motion.div 
+
+            <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 0.3 }}
               className="absolute bottom-12 left-0 right-0 text-center flex flex-col items-center gap-2"
